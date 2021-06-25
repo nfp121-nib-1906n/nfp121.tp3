@@ -41,7 +41,7 @@ public class IHMPile extends JFrame implements ActionListener{
                 p.empiler(objEmp);
                 contenu.setText(p.toString());
             } catch (PilePleineException pleineExc) {
-                contenu.setText(p.toString() + " estPleine !");
+                contenu.setText(p.toString() + " full ");
             }
         }else{
             try {
@@ -49,7 +49,7 @@ public class IHMPile extends JFrame implements ActionListener{
                 sommet.setText(objDep.toString());
                 contenu.setText(p.toString()); 
             } catch (PileVideException VideExc) {
-                contenu.setText(p.toString() + " estVide !");
+                contenu.setText(p.toString() + " empty ");
             }
         }
     }
