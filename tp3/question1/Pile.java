@@ -6,8 +6,8 @@ import question1.PileVideException;
 /**
  * A remplacer par votre classe Pile .
  * 
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Maria Bou Aoun
+ * @version 2.0
  */
 public class Pile {
     public final static int TAILLE_PAR_DEFAUT = 5;
