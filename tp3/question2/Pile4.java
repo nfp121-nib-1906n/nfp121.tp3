@@ -60,21 +60,25 @@ public class Pile4 implements PileI, Cloneable {
 
 	public void empiler(Object o) throws PilePleineException {
 		if (estPleine())
-			throw new PilePleineException();
-		// à compléter
+	            throw new PilePleineException();
+		    Maillon m = new Maillon(o, stk);
+                    stk = m;
+                    nombre ++;
 	}
 
 	public Object depiler() throws PileVideException {
 		if (estVide())
-			throw new PileVideException();
-		// à compléter
-		return null;
+	         throw new PileVideException();
+		 Object el = stk.el();
+                 stk = stk.suivant();
+                 nombre --;
+        return el;
 	}
 
 	public Object sommet() throws PileVideException {
 		if (estVide())
 			throw new PileVideException();
-		return null; // à compléter
+		 return this.stk.el();
 	}
 
 	/**
@@ -83,7 +87,7 @@ public class Pile4 implements PileI, Cloneable {
 	 * @return vrai si la pile est vide, faux autrement
 	 */
 	public boolean estVide() {
-		return false; // à compléter
+		   return this.stk == null; 
 	}
 
 	/**
@@ -92,7 +96,7 @@ public class Pile4 implements PileI, Cloneable {
 	 * @return vrai si la pile est pleine, faux autrement
 	 */
 	public boolean estPleine() {
-		return false; // à compléter
+		 return this.capacite == this.nombre; 
 	}
 
 	/**
@@ -104,7 +108,18 @@ public class Pile4 implements PileI, Cloneable {
 	public String toString() {
 
 		String s = "[";
-		// à compléter
+		 
+        Maillon temp = stk;
+        while (temp != null){
+            if (temp.el() == null)
+                s += "NULL";
+            else
+                s += temp.el().toString();
+
+            temp = temp.suivant();
+            if (temp !=null)
+                s += ", ";
+        }
 		return s + "]";
 	}
 
