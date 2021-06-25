@@ -11,3 +11,4 @@ comment3.params=
 comment3.target=void\ tearDown()
 comment3.text=\r\n\ Supprime\ les\ engagements\r\n\ \r\n\ M\u00E9thode\ appel\u00E9e\ apr\u00E8s\ chaque\ appel\ de\ m\u00E9thode\ de\ test.\r\n
 numComments=4
+ 
