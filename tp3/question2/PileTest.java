@@ -90,4 +90,17 @@ public class PileTest extends junit.framework.TestCase {
         assertFalse("égalité de deux piles ? ", p1.equals(p2));
 
     }
+    public void testingThree() throws Exception {
+
+        p1.empiler(70);
+        p1.empiler(60);
+        p1.empiler(50);
+
+        p2.empiler(70);
+        p2.empiler(60);
+        p2.empiler(50);
+
+        assertEquals ("Hachages de p1 and p2 are equals ?", true, 
+            p1.hashC() == p2.hashC());
+    }
 }
