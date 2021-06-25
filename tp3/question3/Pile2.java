@@ -15,23 +15,32 @@ public class Pile2<T> implements PileI<T>{
      * @param taille la "taille maximale" de la pile, doit être > 0
      */
     public Pile2(int taille){
-        // à compléter
+       if (taille <= 0)
+            taille = CAPACITE_PAR_DEFAUT;
+        this.stk = new Stack<T>();
+        this.capacite = taille;
     }
 
     public Pile2(){
-        // à compléter
+          this(0);
     }
 
     public void empiler(T o) throws PilePleineException{
-        // à compléter
+       if (estPleine())
+            throw new PilePleineException();
+        this.stk.push(o);
     }
 
     public T depiler() throws PileVideException{
-        // à compléter
+       if (estVide())
+            throw new PileVideException();
+        return this.stk.pop();
     }
 
     public T sommet() throws PileVideException{
-        // à compléter
+         if (estVide())
+            throw new PileVideException();
+        return this.stk.peek();
     }
 
     // recopier ici toutes les autres méthodes
