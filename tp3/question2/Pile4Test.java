@@ -3,8 +3,8 @@ package question2;
 /**
  * Classe-test Pile4Test.
  * 
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Maria Bou Aoun
+ * @version 2.0
  * 
  *          Les classes-test sont documentées ici :
  *          http://junit.sourceforge.net/javadoc/junit/framework/TestCase.html
@@ -56,5 +56,48 @@ public class Pile4Test extends junit.framework.TestCase {
 	{
 		// Libérez ici les ressources engagées par setUp()
 	}
+public void testingFour() {
+        assertEquals(PileI.CAPACITE_PAR_DEFAUT, p1.capacite());
+    }
+
+
+
+    public void test_Pile_equals() throws Exception {
+
+        p1.empiler(50);
+        p1.empiler(52);
+        p1.empiler(54);
+
+        p2.empiler(50);
+        p2.empiler(52);
+        p2.empiler(54);  
+	    
+        assertTrue("égalité de deux piles ? ", p1.equals(p2));
+        assertTrue("égalité de deux piles ? ", p2.equals(p1));
+        assertTrue("égalité de deux piles ? ", p1.equals(p1));
+
+        p1.empiler(58);
+        p2.empiler(58);
+        assertTrue("égalité de deux piles ? ", p1.equals(p2));
+
+        p1.empiler(null);
+        p2.empiler(60);
+        assertFalse("égalité de deux piles ? ", p1.equals(p2));
+    }
+
+    public void testingFour() throws Exception {
+
+
+        p1.empiler(41);
+        p1.empiler(42);
+        p1.empiler(43);
+
+        p2.empiler(41);
+        p2.empiler(42);
+        p2.empiler(43);
+
+        assertEquals ("Hachages de p1 and p2 are equals ?", true, 
+            p1.hashC() == p2.hashC());
+    }
 
 }
