@@ -31,3 +31,4 @@ comment9.params=taille
 comment9.target=Pile2(int)
 comment9.text=Cr\u00E9ation\ d'une\ pile.\n@param\ taille\ la\ taille\ de\ la\ pile,\ la\ taille\ doit\ \u00EAtre\ >\ 0\n\n
 numComments=13
+ 
