@@ -12,4 +12,4 @@ comment3.text=\r\n\ Supprime\ les\ engagements\r\n\ \r\n\ M\u00E9thode\ appel\u0
 comment4.params=
 comment4.target=void\ testEncourageant()
 comment4.text=\r\n\ Il\ ne\ vous\ reste\ plus\ qu'\u00E0\ d\u00E9finir\ une\ ou\ plusieurs\ m\u00E9thodes\ de\ test.\ Ces\r\n\ m\u00E9thodes\ doivent\ v\u00E9rifier\ les\ r\u00E9sultats\ attendus\ \u00E0\ l'aide\ d'assertions\r\n\ assertTrue(<boolean>).\ Par\ convention,\ leurs\ noms\ devraient\ d\u00E9buter\ par\r\n\ "test".\ Vous\ pouvez\ \u00E9baucher\ le\ corps\ gr\u00E2ce\ au\ menu\ contextuel\r\n\ "Enregistrer\ une\ m\u00E9thode\ de\ test".\r\n
-numComments=5
+numComments=5 
