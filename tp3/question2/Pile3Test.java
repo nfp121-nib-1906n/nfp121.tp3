@@ -3,8 +3,8 @@ package question2;
 /**
  * Classe-test Pile3Test.
  * 
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Maria Bou Aoun
+ * @version 2.0
  * 
  *          Les classes-test sont documentées ici :
  *          http://junit.sourceforge.net/javadoc/junit/framework/TestCase.html
@@ -24,15 +24,8 @@ package question2;
  *          engagements, et suivi d'un appel à tearDown(), qui les détruit.
  */
 public class Pile3Test extends junit.framework.TestCase {
-	// Définissez ici les variables d'instance nécessaires à vos engagements;
-	// Vous pouvez également les saisir automatiquement du présentoir
-	// à l'aide du menu contextuel "Présentoir --> Engagements".
-	// Notez cependant que ce dernier ne peut saisir les objets primitifs
-	// du présentoir (les objets sans constructeur, comme int, float, etc.).
-
-	/**
-	 * Constructeur de la classe-test Pile3Test
-	 */
+	  private PileI p1;
+          private PileI p2;
 	public Pile3Test() {
 	}
 
@@ -43,7 +36,8 @@ public class Pile3Test extends junit.framework.TestCase {
 	 */
 	protected void setUp() // throws java.lang.Exception
 	{
-		// Initialisez ici vos engagements
+        p1 = new question2.Pile3();
+        p2 = new question2.Pile3();
 
 	}
 
@@ -57,12 +51,73 @@ public class Pile3Test extends junit.framework.TestCase {
 		// Libérez ici les ressources engagées par setUp()
 	}
 
-	/**
-	 * Il ne vous reste plus qu'à définir une ou plusieurs méthodes de test. Ces
-	 * méthodes doivent vérifier les résultats attendus à l'aide d'assertions
-	 * assertTrue(<boolean>). Par convention, leurs noms devraient débuter par
-	 * "test". Vous pouvez ébaucher le corps grâce au menu contextuel
-	 * "Enregistrer une méthode de test".
-	 */
+	   public void test_Pile_capacite() {
+        assertEquals(PileI.CAPACITE_PAR_DEFAUT, p1.capacite());
+    }
+
+    public void test_Pile_estPleine() throws Exception {
+        PileI p = new question2.Pile3(2);
+        p.empiler(48);
+        assertEquals(1, p.taille());
+        p.empiler(93);
+        assertEquals(2, p.taille());
+
+        assertEquals(true, p.estPleine());
+        assertEquals(p.taille(), p.capacite());
+        try {
+            p.empiler(0);
+            fail();
+        } catch (Exception e) {
+            assertTrue(e instanceof question1.PilePleineException);
+        }
+    }
+
+    public void test_Pile_sommet() throws Exception {
+        PileI p = new question2.Pile3(6);
+        assertEquals(true, p.estVide());
+
+        p.empiler(new Integer(13));
+        assertEquals(" sommet ?? ", new Integer(13), p.sommet());
+        assertEquals(1, p.taille());
+        assertEquals(" depiler ?? ", new Integer(13), p.depiler());
+        assertEquals(0, p.taille());
+    }
+
+  
+
+    public void test_Pile_equals() throws Exception {
+
+        p1.empiler(null);
+        p1.empiler(81);
+        p1.empiler(82);
+
+        p2.empiler(null);
+        p2.empiler(81);
+        p2.empiler(82);
+
+        assertTrue("Egalite de deux piles ? ", p1.equals(p2));
+        assertTrue("Egalite de deux piles ? ", p2.equals(p1));
+        assertTrue("Egalite de deux piles ? ", p1.equals(p1));
+
+        p1.empiler(null);
+        p2.empiler(null);
+        assertTrue("Egalite de deux piles ? ", p1.equals(p2));
+
+    }
+    
+    public void testingFour() throws Exception {
+        
+
+        p1.empiler(10);
+        p1.empiler(13);
+        p1.empiler(16);
+
+        p2.empiler(10);
+        p2.empiler(13);
+        p2.empiler(16);
+
+        assertEquals ("Hachages de p1 and p2 are Equals ?", true, 
+            p1.hashC() == p2.hashC());
+    }
 
 }
