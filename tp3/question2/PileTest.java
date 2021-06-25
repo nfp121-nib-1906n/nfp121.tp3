@@ -72,7 +72,7 @@ public class PileTest extends junit.framework.TestCase {
 
     }
 
-    public void testingThree() throws Exception {
+    public void test_Pile_equals() throws Exception {
 
         p1.empiler(3);
         p1.empiler(2);
@@ -90,7 +90,7 @@ public class PileTest extends junit.framework.TestCase {
         assertFalse("égalité de deux piles ? ", p1.equals(p2));
 
     }
-    public void testingFour() throws Exception {
+    public void testingThree() throws Exception {
 
         p1.empiler(70);
         p1.empiler(60);
