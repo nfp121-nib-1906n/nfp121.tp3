@@ -65,8 +65,8 @@ public class Pile3 implements PileI {
 		        if (estVide())
             return "[]";
         StringBuffer sb = new StringBuffer("[");
-        int vectorTaille = this.taille();
-        for (int i = vectorTaille - 1; i >= 0; i--) {
+        int vectorT = this.taille();
+        for (int i = vectorT - 1; i >= 0; i--) {
             sb.append(this.v.get(i));
             if (i > 0)
                 sb.append(", ");
