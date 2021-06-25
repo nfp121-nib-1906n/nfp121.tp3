@@ -172,5 +172,66 @@ public class PilesAuMemeComportement extends junit.framework.TestCase {
         assertEquals(" différence  sur la taille() ?? ",p3.taille(), p4.taille());
 
     }
+    
+    public void testingOne() throws Exception {
+        p1.empiler(1);
+        p1.empiler(2);
+        p1.empiler(3);
+        p1.empiler(4);
+        p1.empiler(5);
+        p1.empiler(6);
+
+        p2.empiler(1);
+        p2.empiler(2);
+        p2.empiler(3);
+        p2.empiler(4);
+        p2.empiler(5);
+        p2.empiler(6);
+
+        p3.empiler(1);
+        p3.empiler(2);
+        p3.empiler(3);
+        p3.empiler(4);
+        p3.empiler(5);
+        p3.empiler(6);
+
+        p4.empiler(1);
+        p4.empiler(2);
+        p4.empiler(3);
+        p4.empiler(4);
+        p4.empiler(5);
+        p4.empiler(6);
+
+       
+        assertEquals ("p1 et p2 are equals?", true, p1.equals(p2));
+        assertEquals ("p1 et p3 are equals ?", true, p1.equals(p3));
+        assertEquals ("p1 et p4 are equals ?", true, p1.equals(p4));
+      
+    }
+
+    public void testingTwo() throws Exception {
+        
+        p1.empiler(22);
+        p1.empiler(23);
+        p1.empiler(24);
+
+        p2.empiler(22);
+        p2.empiler(23);
+        p2.empiler(24);
+
+        p3.empiler(22);
+        p3.empiler(23);
+        p3.empiler(24);
+
+        p4.empiler(22);
+        p4.empiler(23);
+        p4.empiler(24);
+
+        assertEquals ("Hachages de p1 and p2 are equals ?", true, 
+            p1.hashCode() == p2.hashCode());
+        assertEquals ("Hachages de p2 and p3 are equals ?", true, 
+            p2.hashCode() == p3.hashCode());
+      
+    }
 }
 
